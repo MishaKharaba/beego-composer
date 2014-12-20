@@ -8,9 +8,9 @@ var ajax, pages, scaffold;
 var cache = {};
 
 template.pages = [
-  {name: 'Profile', hash: 'one', url: 'static/app/profile.html'},
-  {name: 'Services', hash: 'two', url: 'static/app/services.html'},
-  {name: 'Hacks', hash: 'three', url: 'static/app/hacks.html'},
+  {name: 'Main', hash: 'one', url: 'static/app/main.html'},
+  {name: 'Dashboard', hash: 'two', url: 'static/app/dashboard.html'},
+  {name: 'Contact', hash: 'three', url: 'static/app/contact.html'},
 ];
 
 template.addEventListener('template-bound', function(e) {
