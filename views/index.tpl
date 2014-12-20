@@ -4,14 +4,14 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>SMW Dashboard</title>
+  <title>Beego Polymer SPA</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
   <script src="static/components/platform/platform.js"></script>
   
-  <link rel="import" href="elements.html">
+  <link rel="import" href="static/elements/elements.html">
   <link href="static/css/dashboard.css" rel="stylesheet" type="text/css" />
 
   <link href="static/components/core-scaffold/core-scaffold.html" rel="import">
@@ -60,7 +60,7 @@
       <!-- Menu -->
       <nav>
         <core-toolbar id="menu_header">
-          <span id="menu_title">James Rubino</span>
+          <span id="menu_title">Name</span>
         </core-toolbar>
           <core-menu id="menu" valueattr="hash" 
                      selected="{{route}}" 

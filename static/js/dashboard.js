@@ -8,11 +8,9 @@ var ajax, pages, scaffold;
 var cache = {};
 
 template.pages = [
-  {name: 'My Profile', hash: 'one', url: 'smw_apps/profile.html'},
-  {name: 'My Family', hash: 'two', url: 'smw_apps/family.html'},
-  {name: 'My Providers', hash: 'three', url: 'smw_apps/providers.html'},
-  {name: 'My Apps', hash: 'four', url: 'smw_apps/apps.html'},
-  {name: 'SMW Help', hash: 'five', url: 'smw_apps/help.html'},
+  {name: 'Profile', hash: 'one', url: 'static/app/profile.html'},
+  {name: 'Services', hash: 'two', url: 'static/app/services.html'},
+  {name: 'Hacks', hash: 'three', url: 'static/app/hacks.html'},
 ];
 
 template.addEventListener('template-bound', function(e) {
