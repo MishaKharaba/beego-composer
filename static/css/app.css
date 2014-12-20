@@ -21,7 +21,7 @@ core-animated-pages > * {
 }
 
 body /deep/ core-toolbar {
-  background-color: #03a9f4;
+  background-color: #9b0117;
   color: #fff;
 }
 
@@ -35,7 +35,8 @@ core-menu > paper-item {
 }
 
 core-menu > paper-item.core-selected {
-  background: #e1f5fe;
+  background: #01649b;
+  a: #fff;
 }
 
 @media all and (max-width: 480px) {

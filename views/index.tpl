@@ -10,9 +10,10 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
   <script src="static/components/platform/platform.js"></script>
+  <link rel="shortcut icon" href="static/img/favicon.ico">
   
   <link rel="import" href="static/elements/elements.html">
-  <link href="static/css/dashboard.css" rel="stylesheet" type="text/css" />
+  <link href="static/css/app.css" rel="stylesheet" type="text/css" />
 
   <link href="static/components/core-scaffold/core-scaffold.html" rel="import">
   <link href="static/components/core-toolbar/core-toolbar.html" rel="import">
