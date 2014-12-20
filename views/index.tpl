@@ -68,17 +68,17 @@
                      selectedmodel="{{selectedPage}}" 
                      on-core-select="{{ menuItemSelected }}" on-click="{{ajaxLoad}}">
 
-              <paper-item noink>
-      <core-icon icon="label-outline"></core-icon>
-      <a href="#one">Profile</a>
+              <paper-item >
+      <core-icon icon="label"></core-icon>
+      <a href="#one">Main</a>
     </paper-item>
-    <paper-item noink>
-      <core-icon icon="label-outline"></core-icon>
-      <a href="#two">Services</a>
+    <paper-item>
+      <core-icon icon="label"></core-icon>
+      <a href="#two">Dashboard</a>
     </paper-item>
-        <paper-item noink>
-      <core-icon icon="label-outline"></core-icon>
-      <a href="#two">Hacks</a>
+        <paper-item>
+      <core-icon icon="label"></core-icon>
+      <a href="#two">Contact</a>
     </paper-item>
           
         </core-menu>
