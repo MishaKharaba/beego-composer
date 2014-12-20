@@ -11,3 +11,4 @@ To recreate
   "directory" : "components"
 }
 5. bower install --save Polymer/polymer
+6. all polymer links will be in static/components...
