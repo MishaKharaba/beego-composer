@@ -3,7 +3,8 @@
 
 <polymer-element name="random-puppy-element" noscript>
   <template>
-    <span>I'm the <b>random-puppy-element</b>. This is my Shadow DOM.</span>
-    <img src="http://www.thepuppyapi.com/puppy?format=src"></img>
+    <h3>random-puppy-element</h3>
+    <core-ajax url="http://www.thepuppyapi.com/puppy" handleAs="json" response="{{resp}}"></core-ajax>
+    <img src="{{resp.puppy_url}}">
   </template>
 </polymer-element>

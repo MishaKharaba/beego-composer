@@ -1,11 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <script src="static/components/webcomponentsjs/webcomponents.js"></script>
-    <link rel="import" href="static/elements/random-puppy-element.html">
-  </head>
-  <body>
-    <random-puppy-element></random-puppy-element>
 
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>SMW Dashboard</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+  <script src="static/components/platform/platform.js"></script>
+  
+  <link rel="import" href="elements.html">
+  <link href="static/css/dashboard.css" rel="stylesheet" type="text/css" />
+
+  <link href="static/components/core-scaffold/core-scaffold.html" rel="import">
+  <link href="static/components/core-toolbar/core-toolbar.html" rel="import">
+  <link href="static/components/core-menu/core-menu.html" rel="import">
+  <link href="static/components/core-icons/core-icons.html" rel="import">
+  <link href="static/components/core-a11y-keys/core-a11y-keys.html" rel="import">
+  <link href="static/components/core-ajax/core-ajax.html" rel="import">
+  <link href="static/components/core-icon-button/core-icon-button.html" rel="import">
+  <link href="static/components/core-animated-pages/core-animated-pages.html" rel="import">
+  <link href="static/components/core-animated-pages/transitions/slide-from-right.html" rel="import">
+
+  <link href="static/components/paper-item/paper-item.html" rel="import">
+
+  <link href="static/components/flatiron-director/flatiron-director.html" rel="import">
+  <link href="static/components/font-roboto/roboto.html" rel="import">
+
+  <base target="_blank"></base>
+  
+  <style>
+    core-animated-pages > *  {
+      font-size: inherit;
+      overflow-y: auto;
+      padding: 30px;
+    }
+  </style>
+
+</head>
+
+<body unresolved fullbleed>
+  <template is="auto-binding" id="t">
+
+  <!-- Route controller. -->
+  <flatiron-director route="{{route}}" autohash></flatiron-director>
+  
+  <!-- Keyboard nav controller. -->
+  <core-a11y-keys target="{{parentElement}}"
+                keys="up down left right space space+shift"
+                on-keys-pressed="{{keyHandler}}"></core-a11y-keys>  
+
+  <!-- Dynamic content controller -->
+  <core-ajax id="ajax" url="{{selectedPage.page.url}}" handleAs="document" on-core-response="{{ onResponse }}"></core-ajax>              
+
+   <core-scaffold id="scaffold">
+  
+      <!-- Menu -->
+      <nav>
+        <core-toolbar id="menu_header">
+          <span id="menu_title">James Rubino</span>
+        </core-toolbar>
+          <core-menu id="menu" valueattr="hash" 
+                     selected="{{route}}" 
+                     selectedmodel="{{selectedPage}}" 
+                     on-core-select="{{ menuItemSelected }}" on-click="{{ajaxLoad}}">
+          <template repeat="{{page, i in pages}}">
+            <paper-item icon="label{{route != page.hash ? '-outline' : ''}}"
+                        label="{{page.name}}" hash="{{page.hash}}">
+              <a href="{{page.url}}"></a>
+          </paper-item>
+          </template>
+        </core-menu>
+      </nav>
+  
+      <!-- Content Section -->
+      <core-toolbar tool flex id="content_header">
+      <div flex id="content_title">{{selectedPage.page.name}}</div>
+        <core-icon-button icon="refresh"></core-icon-button>
+        <core-icon-button icon="add"></core-icon-button>
+      </core-toolbar>
+
+      <!-- Loaded Content Area -->
+      <div layout horizontal center-center fit>
+        <core-animated-pages id="pages" selected="{{route}}" valueattr="hash"
+                           transitions="slide-from-right">
+        <template repeat="{{page, i in pages}}">
+          <section hash="{{page.hash}}" layout vertical center-center>
+            <div style="max-width:100%;">Loading...</div>
+          </section>
+        </template>
+      </core-animated-pages>
+      </div>
+    
+    </core-scaffold>
+  </template>
+ <script src="static/js/dashboard.js"></script>
+
+</body>
+
 </html>

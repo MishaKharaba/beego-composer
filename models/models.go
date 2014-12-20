@@ -13,5 +13,9 @@ type AuthUser struct {
 	Email              string `orm:"unique"`
 	Password           string
 	Registration_token string
-	Registration_data  time.Time `orm:"auto_now_add;type(datetime)"`
+	Registration_date  time.Time `orm:"auto_now_add;type(datetime)"`
+}
+
+func init() {
+	orm.RegisterModel(new(AuthUser))
 }
