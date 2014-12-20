@@ -66,12 +66,20 @@
                      selected="{{route}}" 
                      selectedmodel="{{selectedPage}}" 
                      on-core-select="{{ menuItemSelected }}" on-click="{{ajaxLoad}}">
-          <template repeat="{{page, i in pages}}">
-            <paper-item icon="label{{route != page.hash ? '-outline' : ''}}"
-                        label="{{page.name}}" hash="{{page.hash}}">
-              <a href="{{page.url}}"></a>
-          </paper-item>
-          </template>
+
+              <paper-item noink>
+      <core-icon icon="label-outline"></core-icon>
+      <a href="#one">Profile</a>
+    </paper-item>
+    <paper-item noink>
+      <core-icon icon="label-outline"></core-icon>
+      <a href="#two">Services</a>
+    </paper-item>
+        <paper-item noink>
+      <core-icon icon="label-outline"></core-icon>
+      <a href="#two">Hacks</a>
+    </paper-item>
+          
         </core-menu>
       </nav>
   
