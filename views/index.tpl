@@ -104,7 +104,7 @@
     
     </core-scaffold>
   </template>
- <script src="static/js/dashboard.js"></script>
+ <script src="static/js/app.js"></script>
 
 </body>
 

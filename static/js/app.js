@@ -4,16 +4,19 @@
 var DEFAULT_ROUTE = 'one';
 
 var template = document.querySelector('#t');
+var ajax, pages, scaffold;
+var cache = {};
 
 template.pages = [
-  {name: 'Single', hash: 'one'},
-  {name: 'page', hash: 'two'},
-  {name: 'app', hash: 'three'},
-  {name: 'using', hash: 'four'},
-  {name: 'Polymer', hash: 'five'},
+  {name: 'Main', hash: 'one', url: 'static/app/main.html'},
+  {name: 'Dashboard', hash: 'two', url: 'static/app/dashboard.html'},
+  {name: 'Contact', hash: 'three', url: 'static/app/contact.html'},
 ];
 
 template.addEventListener('template-bound', function(e) {
+  scaffold = document.querySelector('#scaffold');
+  ajax = document.querySelector('#ajax');
+  pages = document.querySelector('#pages');
   var keys = document.querySelector('#keys');
 
   // Allow selecting pages by num keypad. Dynamically add
@@ -29,8 +32,6 @@ template.addEventListener('template-bound', function(e) {
 });
 
 template.keyHandler = function(e, detail, sender) {
-  var pages = document.querySelector('#pages');
-
   // Select page by num key. 
   var num = parseInt(detail.key);
   if (!isNaN(num) && num <= this.pages.length) {
@@ -53,19 +54,32 @@ template.keyHandler = function(e, detail, sender) {
   }
 };
 
-template.cyclePages = function(e, detail, sender) {
-  // Click clicks should navigate and not cycle pages.
-  if (e.path[0].localName == 'a') {
-    return;
-  }
-
-  e.shiftKey ? sender.selectPrevious(true) : sender.selectNext(true);
-};
-
 template.menuItemSelected = function(e, detail, sender) {
   if (detail.isSelected) {
-    document.querySelector('#scaffold').closeDrawer();
+
+    // Need to wait one rAF so <core-ajax> has it's URL set.
+    this.async(function() {
+      if (!cache[ajax.url]) {
+        ajax.go();
+      }
+
+      scaffold.closeDrawer();
+    });
+
   }
+};
+
+template.ajaxLoad = function(e, detail, sender) {
+  e.preventDefault(); // prevent link navigation.
+};
+
+template.onResponse = function(e, detail, sender) {
+  var article = detail.response.querySelector('scroll-area article');
+  var html = article.innerHTML;
+
+  cache[ajax.url] = html; // Primitive caching by URL.
+
+  this.injectBoundHTML(html, pages.selectedItem.firstElementChild);
 };
 
 })();
