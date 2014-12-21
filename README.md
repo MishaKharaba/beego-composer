@@ -25,7 +25,7 @@ Notes:
 
    * bower_components renamed to components in static/.bowerrc
    * run all bower tasks inside "/static" where components folder is
-   * The project is setup for development; it is at times best to concatenize polymer components with "vulcanize" for production which may cause url resolution to change slightly.  This concatenation feature is however a built in function of the HTTP 2.0 standard standard once fully implemented.  Benchmark all options to find the best rule of thumb for your application.
+   * The project is setup for development; it is at times best to concatenize polymer components with "vulcanize" for production which may cause url resolution to change slightly.  This concatenation feature is however a built in effect of the HTTP 2.0 standard once fully implemented.  Benchmark all options to find the best rule of thumb for your application.
 
 
 Requires:
@@ -57,7 +57,7 @@ Basic Getting Started Outline:
 
 Essential Reading for App Development with Beego and or Go:
 
-    [Richard Eng](https://medium.com/@richardeng/a-word-from-the-beegoist-d562ff8589d7)
-    [Will Krause](http://hobbyisthacker.com/authentication-with-beego-pt-1-env-setup-and-table-generation/)
-    [Beego Documentation](http://beego.me/docs/intro/)
-    [William Kennedy](http://www.goinggo.net/)
+[Richard Eng](https://medium.com/@richardeng/a-word-from-the-beegoist-d562ff8589d7)
+[Will Krause](http://hobbyisthacker.com/authentication-with-beego-pt-1-env-setup-and-table-generation/)
+[Beego Documentation](http://beego.me/docs/intro/)
+[William Kennedy](http://www.goinggo.net/)
