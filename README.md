@@ -1,15 +1,15 @@
 beego-composer
 ==========
+
 *Work in Progress* 
 
 Beego with Web Components: server rendered and single page apps
 
    * Components for Page Views & Single Page Applets
 
-Single Page apps are resource intensive for mobile but traditional server side rendering model works well.
-Create easy to serve rendered apps with small single page applets when and where helpful.
-Create custom elements with web components.
 
+This project is an example layout to start using web components in your next web app backed in go.
+Supports server side rendering and single page app(lets)
 
 
 Comes with:
@@ -19,17 +19,13 @@ Comes with:
    * Login
    * Authentication
    * Authorization
-   * Lots of comments to understand Beego and App developement
-
-Ready For:
-
-   * Single Page Applets
+   * Lots of comments to understand Beego App developement
 
 Notes:
 
-   * bower_components renamed to components in .bowerrc
+   * bower_components renamed to components in static/.bowerrc
    * run all bower tasks inside "/static" where components folder is
-   * As is the project is set for development; vulcanizing components for production has yet to be addressed.
+   * The project is setup for development; it is at times best to concatenize polymer components with "vulcanize" for production which may cause url resolution to change slightly.  This concatenation feature is however a built in function of the HTTP 2.0 standard standard once fully implemented.  Benchmark all options to find the best rule of thumb for your application.
 
 
 Requires:
@@ -37,9 +33,9 @@ Requires:
     Active Go Installation 
     Beego
     Bee Tool
-    Postgres, MySQL or SQLlite3
+    Configured for Postgres db and Redis for Sessions
     Bower for new and updated web components
-    Imagination
+    Creative Restraint
     Unstoppable Tenacious Unbending Intent
 
 
@@ -48,10 +44,10 @@ Development:
     Fork
     Enhance with Good Intentions
     Pull Request
-    *MIT Liscensed*
+    MIT Licensed
 
 
-Basic Getting Started:
+Basic Getting Started Outline:
 
     git clone to $GOPATH
     create main bego app
@@ -59,3 +55,9 @@ Basic Getting Started:
     serve
 
 
+Essential Reading for App Development with Beego and or Go:
+
+    [Richard Eng](https://medium.com/@richardeng/a-word-from-the-beegoist-d562ff8589d7)
+    [Will Krause](http://hobbyisthacker.com/authentication-with-beego-pt-1-env-setup-and-table-generation/)
+    [Beego Documentation](http://beego.me/docs/intro/)
+    [William Kennedy](http://www.goinggo.net/)

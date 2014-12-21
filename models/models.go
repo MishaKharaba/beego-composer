@@ -5,20 +5,17 @@ import (
 	"time"
 )
 
-type AuthUser struct {
-	Id                 int       `orm:"column(id);auto"`
-	First              string    `orm:"column(firstname);size(50)"`
-	Last               string    `orm:"column(lastname);size(50)"`
-	Username           string    `orm:"column(username);size(50)"`
-	Email              string    `orm:"column(email);size(255)"`
-	Password           string    `orm:"column(password);size(128)"`
-	Registration_token string    `orm:"column(token)"`
-	Created_date       time.Time `orm:"column(created_date);type(timestamp);auto_now_add"`
-	Level              int       `orm:"column(level)"`
-	Admin              bool      `orm:"column(admin)"`
-	Salt               string    `orm:"size(10)"`
+type User struct {
+	Id           int       `orm:"column(id);auto"`
+	FirstName    string    `orm:"column(firstname);size(50)"`
+	LastName     string    `orm:"column(lastname);size(50)"`
+	Username     string    `orm:"column(username);size(50)"`
+	Email        string    `orm:"column(email);size(255)"`
+	Password     string    `orm:"column(password);size(128)"`
+	Created_date time.Time `orm:"column(created_date);type(timestamp);auto_now_add"`
+	Salt         string    `orm:"size(10)"` // when it comes to password security always use salt!
 }
 
 func init() {
-	orm.RegisterModel(new(AuthUser))
+	orm.RegisterModel(new(User))
 }
