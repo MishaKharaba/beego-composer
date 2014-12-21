@@ -57,7 +57,10 @@ Basic Getting Started Outline:
 
 Essential Reading for App Development with Beego and or Go:
 
-[Richard Eng](https://medium.com/@richardeng/a-word-from-the-beegoist-d562ff8589d7)
-[Will Krause](http://hobbyisthacker.com/authentication-with-beego-pt-1-env-setup-and-table-generation/)
-[Beego Documentation](http://beego.me/docs/intro/)
-[William Kennedy](http://www.goinggo.net/)
+* [Richard Eng](https://medium.com/@richardeng/a-word-from-the-beegoist-d562ff8589d7)
+
+* [Will Krause](http://hobbyisthacker.com/authentication-with-beego-pt-1-env-setup-and-table-generation/)
+
+* [Beego Documentation](http://beego.me/docs/intro/)
+
+* [William Kennedy](http://www.goinggo.net/)
