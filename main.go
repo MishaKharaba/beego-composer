@@ -32,7 +32,7 @@ func main() {
 
 	name := "default"
 	// Whether to drop table and re-create.
-	force := false
+	force := true
 	// Print log.
 	verbose := true
 	// Error.
