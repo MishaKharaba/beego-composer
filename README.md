@@ -1,12 +1,15 @@
 beego-composer
 ==========
+*Work in Progress* 
 
-Beego with Web Components: **work in progress**
+Beego with Web Components: server rendered and single page apps
 
    * Components for Page Views & Single Page Applets
 
-Single Page apps are resource intensive for mobile but the server side page render model work well.
-Create easy to serve rendered apps with small single page applets instead.
+Single Page apps are resource intensive for mobile but traditional server side rendering model works well.
+Create easy to serve rendered apps with small single page applets when and where helpful.
+Create custom elements with web components.
+
 
 
 Comes with:
@@ -16,6 +19,7 @@ Comes with:
    * Login
    * Authentication
    * Authorization
+   * Lots of comments to understand Beego and App developement
 
 Ready For:
 
@@ -24,17 +28,27 @@ Ready For:
 Notes:
 
    * bower_components renamed to components in .bowerrc
-   * run bower tasks inside /static where components folder is
+   * run all bower tasks inside "/static" where components folder is
+   * As is the project is set for development; vulcanizing components for production has yet to be addressed.
 
 
 Requires:
 
     Active Go Installation 
     Beego
-    Bower
+    Bee Tool
+    Postgres, MySQL or SQLlite3
+    Bower for new and updated web components
+    Imagination
+    Unstoppable Tenacious Unbending Intent
 
 
+Development:
 
+    Fork
+    Enhance with Good Intentions
+    Pull Request
+    *MIT Liscensed*
 
 
 Basic Getting Started:
